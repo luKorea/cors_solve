@@ -1,0 +1,31 @@
+{
+  "name": "cors_solve",
+  "version": "1.0.0",
+  "description": "cors_solve",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luKorea/cors_solve.git"
+  },
+  "keywords": [
+    "cors"
+  ],
+  "author": "korealu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luKorea/cors_solve/issues"
+  },
+  "homepage": "https://github.com/luKorea/cors_solve#readme",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-cors": "0.0.16",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
