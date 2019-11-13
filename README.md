@@ -127,7 +127,7 @@ sports.qq.com
 
 父页面A  http://www.zhufengpeixun.cn/A.html
 
-```
+```html
 <iframe src="http://school.zhufengpeixun.cn/B.html"></iframe>
 <script>
     document.domain = 'zhufengpeixun.cn';
@@ -137,7 +137,7 @@ sports.qq.com
 
 子页面B  http://school.zhufengpeixun.cn/B.html
 
-```
+```html
 <script>
     document.domain = 'zhufengpeixun.cn';
     alert(window.parent.user);
@@ -151,7 +151,7 @@ A和B非同源
 
 页面A
 
-```
+```html
 <iframe id="iframe" src="http://127.0.0.1:1002/B.html" style="display:none;"></iframe>
 <script>
     let iframe = document.getElementById('iframe');
@@ -169,7 +169,7 @@ A和B非同源
 
 页面B
 
-```
+```html
 <iframe id="iframe" src="http://127.0.0.1:1001/C.html" style="display:none;"></iframe>
 <script>
     let iframe = document.getElementById('iframe');
@@ -182,7 +182,7 @@ A和B非同源
 
 页面C
 
-```
+```html
 <script>
     //=>监听B传来的HASH值
     window.onhashchange = function () {
@@ -196,7 +196,7 @@ A和B非同源
 
 页面A
 
-```
+```js
 let proxy = function(url, callback) {
     let count = 0;
     let iframe = document.createElement('iframe');
@@ -234,7 +234,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/Window/postMessage
 
 A页面
 
-```
+```js
 <iframe src="http://www.zhufengpeixun.com/B.html"></iframe>
 <script>
     let iframe = document.querySelector('iframe');
@@ -249,7 +249,7 @@ A页面
 
 B页面
 
-```
+```js
 window.onmessage = function (ev) {
     console.log(ev.data);
     ev.source.postMessage(ev.data+'@@', ev.origin);
@@ -262,7 +262,7 @@ window.onmessage = function (ev) {
 
 前端处理
 
-```
+```js
 <script src="./socket.io.js"></script>
 <script>
 let socket = io('http://127.0.0.1:3001/');
@@ -284,7 +284,7 @@ socket.send("zhufengpeixun");
 
 服务器端处理
 
-```
+```js
 //=>监听socket连接：server是服务器创建的服务
 socket.listen(server).on('connection', function(client) {
     //=>接收信息
