@@ -57,7 +57,6 @@ app.use(async (ctx, next) => {
         // 需要获取其他字段时，使用Access-Control-Expose-Headers，
         // getResponseHeader('myData')可以返回我们所需的值
         ctx.set("Access-Control-Expose-Headers", "myData");
-
         await next();
     } catch (e) {
         ctx.throw(e);
@@ -85,6 +84,11 @@ router.get('/corsList', ctx => {
         message: '数据请求成功',
         data
     }
+})
+
+// TODO http proxy 
+router.get('/proxyUser', ctx => {
+    ctx.body = data;
 })
 
 
